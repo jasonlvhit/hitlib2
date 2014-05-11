@@ -3,15 +3,15 @@
 	  <head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<link rel="shortcut icon" href="./static/ico/favicon.png">
 
 		<title>书目查询</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="./static/css/bootstrap.css" rel="stylesheet">
-		<link href="./static/css/non-responsive.css" rel="stylesheet">
+		<link href="./static/css/navbar-fixed-top.css" rel="stylesheet">
 		<script type="text/javascript">
-		$("#alert").hide()
 		function validate_required(field,alerttxt)
 		{
 			with (field)
@@ -37,6 +37,17 @@
 			    	{title.focus();$("#alert").show();return false}
 		    	}
 		}
+		
+		function onInputFocus()
+		{
+			var alert = $("#alert");
+			if( alert.css("display") === "block" )
+			{
+					alert.hide();
+			}
+		
+		} 
+	
 		</script>
 	  </head>
 
@@ -69,54 +80,48 @@
 		</div>
 
 		<div class="container">
-		  	<div class="page-header">
-		  		<h1>书目查询</h1>
-		  	</div>
+
 		  	<div class="row">
-		  	<div class="col-md-12">
-		  	<div id="alert" class="alert alert-danger alert-dismissable" style="display:none">
-
-<span class="glyphicon glyphicon-ban-circle"></span>
-
-请至少输入一个检索值！</div>
-
-</div>
-		  		<div class="col-md-6">
+				<div class="col-md-8 hidden-xs hidden-sm">
+					<img style="width:100%;" src="./static/pic/1.jpg" alt="smcx" class="img-rounded">
+				</div>
+			
+		  		<div class="col-md-4">
+		  		<div id="alert" class="alert alert-danger alert-dismissable" style="display:none">
+		  	<span class="glyphicon glyphicon-ban-circle"></span>请至少输入一个检索值！</div>
 		  			<form role="form" action="smcx.php?page=1" onsubmit="return validate_form(this);" method="get">
 			 			<div class="form-group">
-								<input class="form-control" type="text" id="title1" name="title" placeholder="题名1">
+								<input class="form-control" type="text" id="title1" name="title" placeholder="题名1" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="title21" name="title2" placeholder="题名2">
+								<input class="form-control" type="text" id ="title21" name="title2" placeholder="题名2" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="author1" name="author" placeholder="责任者">
+								<input class="form-control" type="text" id ="author1" name="author" placeholder="责任者" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="subject1" name="subject" placeholder="主题词">
+								<input class="form-control" type="text" id ="subject1" name="subject" placeholder="主题词" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="subject21" name="subject2" placeholder="主题词2">
+								<input class="form-control" type="text" id ="subject21" name="subject2" placeholder="主题词2" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="classNo1" name="classNo" placeholder="分类号">
+								<input class="form-control" type="text" id ="classNo1" name="classNo" placeholder="分类号" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="ISBN1" name="ISBN" placeholder="ISBN/ISSN">
+								<input class="form-control" type="text" id ="ISBN1" name="ISBN" placeholder="ISBN/ISSN" onfocus="onInputFocus();">
 						</div>
 						<div class="form-group">
-								<input class="form-control" type="text" id ="callNo1" name="callNo" placeholder="索取号">
+								<input class="form-control" type="text" id ="callNo1" name="callNo" placeholder="索取号" onfocus="onInputFocus();">
 						</div>
 								<input type="hidden" name="smcx_p" value=1>
 						
 						<div class="form-group">
-								<button class="btn btn-primary" type="submit" style="width:100%;height:40px;font-size:18px">提交</button>
+								<button class="btn btn-primary" type="submit" style="width:100%;font-size:18px">提交</button>
 						</div>	
 					</form>
 				</div>
-			<div class="col-md-6">
-			<img style="width:100%;height:100%" src="./static/pic/smcx.jpg" alt="smcx" class="img-rounded">
-			</div>
+
 			</div>
 		</div> 
 

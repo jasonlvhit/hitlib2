@@ -27,7 +27,7 @@ curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_HTTPGET, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $content = curl_exec($ch);
-
+//去掉奇葩的不可打印字符
 $content = str_replace(chr(30),"&nbsp",$content);
 
 $content = mb_convert_encoding($content,"UTF-8","GBK");
@@ -48,13 +48,14 @@ curl_close($ch);
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,, maximum-scale=1">
     <link rel="shortcut icon" href="./static/ico/favicon.png">
 
-    <title>哈工大图书馆</title>
+    <title>书目查询</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./static/css/bootstrap.css" rel="stylesheet">
-    <link href="./static/css/non-responsive.css" rel="stylesheet">
+    <link href="./static/css/navbar-fixed-top.css" rel="stylesheet">
   </head>
 
   <body>
@@ -86,18 +87,15 @@ curl_close($ch);
     </div>
 
     <div class="container">
-		 <div class="page-header">
-			  		<h1>查询结果</h1>
-		</div>
-		<table class="table table-condensed table-hover">
-			<tr>
+		<table class="table table-condensed table-hover table-responsive">
+			<thead>
 				<th>题名</th>
 				<th>责任者</th>
 				<th>出版项</th>
 				<th>出版年</th>
 				<th>页码</th>
 				<th>索取号</th>
-			</tr>
+			</thead>
 			<?php
 			   	$book_count = 0;
 		    	foreach( $tbody->find('tr') as $tr )

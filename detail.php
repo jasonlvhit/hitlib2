@@ -14,6 +14,11 @@ curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_HTTPGET, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $content = curl_exec($ch);
+//去掉奇葩的不可打印字符和其他奇怪的字符
+$content = str_replace(chr(30),"&nbsp",$content);
+$content = str_replace(" /","",$content);						
+$content = str_replace(" =","",$content);
+						
 $content = mb_convert_encoding($content,"UTF-8","GBK");
 //echo $content;
 //curl_close($ch);
@@ -34,12 +39,13 @@ curl_close($ch);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="./static/ico/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <title>哈工大图书馆</title>
+    <title>书目查询</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./static/css/bootstrap.css" rel="stylesheet">
-    <link href="./static/css/non-responsive.css" rel="stylesheet">
+    <link href="./static/css/navbar-fixed-top.css" rel="stylesheet">
   </head>
 
   <body>
@@ -71,9 +77,6 @@ curl_close($ch);
     </div>
 
     <div class="container">
-		 <div class="page-header">
-			  		<h1>书目信息</h1>
-		 </div>
 		 <table class="table">
 		<?php
 			//这个信息页面的DOM树太tm难抓了，通篇都是一样的标签，连个class，id什么的都没有
