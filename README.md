@@ -10,7 +10,7 @@ PC截图
 ![PC截图](https://github.com/HIT-ON-Github/hitlib2/raw/master/screenshot-pc.png)
 
 移动设备截图(iPod Touch 4, iOS 6.1.5)
-![移动设备截图](https://github.com/HIT-ON-Github/hitlib2/raw/master/screenshot-mobile.jpg)
+![移动设备截图](https://raw.githubusercontent.com/HIT-ON-Github/hitlib2/master/screenshot-mobile.png)
 
 ###没错，百度，哥抄的就是你！
 
