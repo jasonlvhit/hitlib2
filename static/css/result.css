@@ -1,0 +1,31 @@
+#searchlogo {
+	margin-top: 20px;
+}
+
+#searchbox {
+	margin-top: 10px;
+}
+
+#container {
+	position: relative;
+	height: auto !important
+	height: 100%;
+}
+
+#resultarea {
+	padding-bottom: 20px;
+}
+
+
+em {
+	font-style: normal;
+	color: #CC0000;
+}
+
+.footer {
+
+	text-align: center;
+	height: 20px;
+	color :#999;
+}
+

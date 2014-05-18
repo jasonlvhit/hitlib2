@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>图书馆登录</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+		<link rel="shortcut icon" href="/hitlib2/static/ico/favicon.png">
+		<link href="/hitlib2/static/css/bootstrap.css" rel="stylesheet">
+		<link href="/hitlib2/static/css/mobile_login.css" rel="stylesheet">
+		<script>
+		function validate_required(field,alerttxt)
+		{
+			with (field)
+			  	{
+				  	if (value==null||value=="")
+				    	{return false}
+				  	else {return true}
+				}
+		}
+		function validate_form(thisform)
+		{
+			with (thisform)
+			  	{
+			  	if (validate_required(rcardNo)==false && validate_required(registerName)==false) {
+			    	{registerName.focus();alert("请输入注册名或证号！");return false}
+		    	}
+		    	else if(validate_required(pwd)==false) {
+			    	{pwd.focus();alert("请输入密码！");return false}
+		    	}
+		    	return true;
+	    	}
+		}
+
+		</script>
+	</head>
+	<body>
+	<div class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<button style="margin-top: 10px;float: right" type="button" class="btn btn-link active">登陆</button>
+			<a href="/hitlib2/mobile/index.html"><img style="width: 100%;" id="searchlogo" src="/hitlib2/static/pic/mobile-logo.jpg" alt="Logo" class="img-rounded"></a>
+			<form id="login" action="/hitlib2/mobile/login.php" method="post" class="form" role="form" onsubmit="return validate_form(this);">
+				<div class="form-group">
+						<input type="text" id="registerName" class="form-control" name="registerName" placeholder="注册名">
+				</div>
+				<div class="form-group">
+						<input type="text" id="rcardNo" class="form-control" name="rcardNo" placeholder="证号">
+				</div>
+				<div class="form-group">
+						<input type="password" id ="pwd" class="form-control" name="pwd" placeholder="密码">
+				</div>
+					<button style="margin-top: 10px" type="submit" class="btn btn-primary btn-block">登陆</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<footer class="footer">
+		<div>Copyright &copy; 2014 Skyline75489.</div>
+	</footer>
+</div>
+
+<script src="/hitlib2/static/js/jquery-2.1.1.min.js"></script>
+<script src="/hitlib2/static/js/bootstrap.min.js"></script>
+</body>
+</html>
