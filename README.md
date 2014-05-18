@@ -10,8 +10,8 @@ PC截图
 ![PC截图](https://github.com/HIT-ON-Github/hitlib2/raw/master/screenshot-pc.png)
 
 移动设备截图(iPod Touch 4, iOS 6.1.5)
-![移动设备截图](https://github.com/HIT-ON-Github/hitlib2/raw/master/screenshot-mobile.png)
+![移动设备截图](https://github.com/HIT-ON-Github/hitlib2/raw/master/screenshot-mobile.jpg)
 
 ###没错，百度，哥抄的就是你！
 
-附带Python脚本一枚，不想看PHP代码的可以看看Python代码。我知道大家都喜欢Python。
+附带Python脚本一枚(尚未完成)，不想看PHP代码的可以看看Python代码。我知道大家都喜欢Python。
