@@ -23,11 +23,14 @@ PC截图
 ```python
 >>> from hitlib2 import query
 >>> a = query("网页")
->>> b = query("读者",qk")
+>>> b = query("读者","qk")
 >>> c = query("软件","lw")
 >>> a
 [{'publisher': u'\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e', 'author': u'\u5218\u745e\u65b0 \
 .......
+```
+
+```python
 >>> from hitlib2 import prettyprint
 >>> prettyprint(a)
 网页设计与制作教程
