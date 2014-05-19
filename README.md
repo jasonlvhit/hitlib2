@@ -15,12 +15,13 @@ PC截图
 
 ###没错，百度，哥抄的就是你！
 
-附带Python脚本一枚，不想看PHP代码的可以看看Python代码。我知道大家都喜欢Python。
+###附带Python脚本一枚
 
+不想看PHP代码的可以看看Python代码。我知道大家都喜欢Python。
 
 示例代码：
 
-查询，返回类型为字典的数组
+查询
 
 ```python
 >>> from hitlib2 import query
@@ -32,7 +33,7 @@ PC截图
 ......
 ```
 
-使用prettprint打印
+使用prettyprint打印查询结果
 
 ```python
 >>> from hitlib2 import prettyprint
