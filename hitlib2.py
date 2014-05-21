@@ -13,7 +13,7 @@ QK_TYPE="590"
 #论文
 LW_TYPE="666"
 
-def _requset(title,query_type,page):
+def _request(title,query_type,page):
 	response = None
 	try:
 		response = requests.get(BASE_URL + "&title=" + title + "&pabookType=" + query_type + "&smcx_p=" + str(page));
@@ -82,19 +82,26 @@ def _resolve_html(html,query_type):
 		result_list.append(row_dict)
 	return result_list
 
-def query(title, q_type="sm", page=1) :
+def query(title, q_type="sm", page=1):
+	"""
+	query() can query book, magzine and paper
+	"""
 	query_type = SM_TYPE
 	if q_type == "qk":
 		query_type == QK_TYPE
 	elif q_type == "lw":
 		query_type == LW_TYPE
 	
-	html = _requset(title,query_type,page)
+	html = _request(title,query_type,page)
 	result = []
 	result = _resolve_html(html,query_type)
 	return result
 
 def prettyprint(result_list,keyword="title"):
+	"""
+	prettyprint can print the value of given key
+	of every result in the result_list
+	"""
 	for a in result_list:
 		if isinstance(a,dict):
 			print(a[keyword])
