@@ -19,6 +19,13 @@ PC截图
 
 不想看PHP代码的可以看看Python代码。我知道大家都喜欢Python。
 
+####依赖
+* Requests
+* BeautifulSoup
+
+####环境
+Linux + Python 2.7.3(没有在其他环境下测试过)
+
 示例代码：
 
 查询
