@@ -13,7 +13,7 @@ PC截图
 
 ![移动设备截图](https://raw.githubusercontent.com/HIT-ON-Github/hitlib2/master/screenshot-mobile.png)
 
-###没错，百度，哥抄的就是你！
+##没错，百度，哥抄的就是你！
 
 ###附带Python脚本一枚
 
@@ -26,7 +26,7 @@ PC截图
 ####环境
 Linux + Python 2.7.3(没有在其他环境下测试过)
 
-示例代码：
+####示例代码：
 
 查询
 
