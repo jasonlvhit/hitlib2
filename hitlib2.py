@@ -19,10 +19,10 @@ def _request(title,query_type,page):
 		response = requests.get(BASE_URL + "&title=" + title + "&pabookType=" + query_type + "&smcx_p=" + str(page));
 	except Exception as e:
 		pass
-	if(response):
+	if response :
 		return BeautifulSoup(response.content)
 	else:
-		raise TypeError("Response is None")
+		raise TypeError("No response from server")
 
 def _digest_info(tr):
 	info = []
